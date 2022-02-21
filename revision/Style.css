@@ -1,56 +1,51 @@
 body {
-     background-image: linear-gradient(to top, #e6417e,#f7ca96, #fdf3b1);
+    background-image: linear-gradient(to top, #e6417e, #f7ca96, #fdf3b1);
     background-color: #e6417e;
     color: #83113b;
-
-    
 }
 
-
-
 button {
-float:left;
-padding: 0;
-border: none;
-background: none;
+    float: left;
+    padding: 0;
+    border: none;
+    background: none;
     cursor: pointer;
 }
 
-
-.row{
+.row {
     overflow: hidden;
     clear: both;
-    
-    
 }
+
 #wrapper {
     width: 80%;
-    margin:auto;
+    margin: auto;
     /*transition: margin-left .5s;*/
 }
 
 .inner {
     width: 80%;
-    margin:auto;
-       font-size: 25em;
+    margin: auto;
+    font-size: 25em;
     /*transition: margin-left .5s;*/
 }
 
-h2{
-     color: #e3276c;
+h2 {
+    color: #e3276c;
 }
-    #head {
+
+#head {
     padding: 5px 0px 5px 0px;
     width: 100%;
     height: 80px;
     font-family: sans-serif;
-    background-size: auto;   
+    background-size: auto;
     text-align: center;
     background-color: #fef4f7;
     color: #e3276c;
 }
 
-#main{
+#main {
     float: left;
     width: 70%;
     height: 500px;
@@ -60,8 +55,7 @@ h2{
     text-align: center;
 }
 
-#out1{
-    
+#out1 {
     float: right;
     width: 30%;
     height: 500px;
@@ -69,12 +63,9 @@ h2{
     background-color: #fef4f7;
     color: #b71852;
     text-align: center;
-    
 }
 
-
-#out2{
- 
+#out2 {
     float: left;
     width: 50%;
     height: 200px;
@@ -82,12 +73,9 @@ h2{
     background-color: #fef4f7;
     color: #b71852;
     text-align: center;
-
 }
 
-    
-
-#out3{
+#out3 {
     float: right;
     width: 50%;
     height: 200px;
@@ -97,62 +85,74 @@ h2{
     text-align: center;
 }
 
-
 .col {
-  float: left;
-  width: 50%;
+    float: left;
+    width: 50%;
 }
-
 
 
 /* The side navigation menu */
+
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-    background-image: linear-gradient(to top, #fdf3b1,#f7ca96, #e6417e);
- /* background-color: #fbf1b3; /*#f08db2;  Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 2s; /* 0.5 second transition effect to slide in the sidenav */
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-image: linear-gradient(to top, #fdf3b1, #f7ca96, #e6417e);
+    /* background-color: #fbf1b3; /*#f08db2;  Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 2s;
+    /* 0.5 second transition effect to slide in the sidenav */
     opacity: 95%;
-border-radius: 3%
+    border-radius: 3%
 }
+
 
 /* The navigation menu links */
+
 .sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #fef4f7;
-  display: block;
-  transition: 0.3s;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fef4f7;
+    display: block;
+    transition: 0.3s;
 }
+
 
 /* When you mouse over the navigation links, change their color */
+
 .sidenav a:hover {
-  color:#fef4f7;
+    color: #fef4f7;
 }
 
+
 /* Position and style the close button (top right corner) */
+
 .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
 #header {
-  overflow:hidden; /* contain floats */
-  height:400px;
-  color: #e3276c;
- font-family: serif;
-
-    
+    overflow: hidden;
+    /* contain floats */
+    height: 400px;
+    color: #e3276c;
+    font-family: serif;
 }
 
 
@@ -162,8 +162,14 @@ border-radius: 3%
   padding: 20px;
 }*/
 
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
