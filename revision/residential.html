@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        
+        <title>Escape the Ship</title>
+        
+        <link href="css/layoutResidential.css" rel="stylesheet" type="text/css"/>
+
+        <script type="text/javascript">
+        
+            window.addEventListener('load', function() { te = setInterval(countDown, 1000);});
+            var timer = 0;
+            var te;
+            var countFontSize = 0;
+            var countContrast = 0;
+            var countDoor = 0;
+            var countIncorrect = 0;
+            var carried = 0;
+            var card1023 = 0;
+            var card1029 = 0;
+            var card1030 = 0;
+            var keycard = new Audio();
+            keycard.src = "sound/keycardLift.mp3"; 
+            
+            var lockedDoor = new Audio();
+            lockedDoor.src = "sound/lockedDoor.mp3";
+            
+            
+            var keycard = new Audio();
+            keycard.src = "sound/keycardLift.mp3";
+            
+            var name = sessionStorage.getItem('fName');
+            var timeTaken = 0;
+            var level = 5;
+            var name = sessionStorage.getItem('transferName');
+            
+            function recieveStairs() {
+                
+                countContrast = sessionStorage.getItem('transferContrast');
+
+                countFontSize = sessionStorage.getItem('transferSize');
+                
+                timer = sessionStorage.getItem('timeLeft');
+
+            
+            }
+            
+            function initialStairs() {
+                
+                recieveStairs();
+                initialOutputStairs();
+                setSize();
+                setContrast();
+                
+                setTimeout(timerHint, 20000);
+
+            }    
+            
+            function timerHint() {
+                
+               document.getElementById("outputText").innerHTML += "<span class = 'player'><br><br>[" + name + "]: I can't give up now, not this close to escaping!</span>"; 
+                
+            } 
+            
+            function initialOutputStairs() {
+                
+                document.getElementById("outputText").innerHTML += "<span class = 'player'>[" + name + "]: I must be getting close to the exit - those waves sound really close now.</span>";
+                
+            }
+            
+            function countDown() {
+                
+                if(timer >= 0) {
+
+                    document.getElementById('timeLeft').innerHTML = timer;
+                    timer--;
+                    timeTaken++;
+
+                    
+                    
+                } else {
+                    
+                    var PageId = level;
+                    
+                    sessionStorage.setItem('PageId', PageId);
+                    
+                    var transferContrast = countContrast;
+                
+                    sessionStorage.setItem('transferContrast', transferContrast);
+                
+                    var transferSize = countFontSize;
+                
+                    sessionStorage.setItem('transferSize', transferSize);
+                    
+                    window.open('GameSummaryLose.html', '_self'); 
+                    clearInterval(te);
+                    
+                }
+                 
+             }
+            
+            
+            
+            function pickUp1023() {
+                
+                if(carried > 0) {
+                    
+                   document.getElementById('outputText').innerHTML += "<span class = 'player'><br><br>[" + name + "]: I can only try one keycard at a time!.</span>"; 
+                    
+                } else {
+                
+                
+                if (card1023 < 1) {
+                    
+                    document.getElementById('outputText').innerHTML += "<span class = 'player'><br><br>[" + name + "]: I have picked-up keycard 1023.</span>";
+                    keycard.play();
+                    card1023++;
+                    countIncorrect++;
+                    carried++;
+                    
+                    
+                } else {
+                    
+                    document.getElementById("outputText").innerHTML += "<span class = 'system'><br><br>[System]: You have already searched there.</span>";
+                    
+                }
+                
+                
+               
+                if (card1029 == 0 && card1030 > 0) {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/1029.png';
+                    
+                    
+                } else if (card1029 > 0 && card1030 ==0) {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/1030.png';
+                    
+                    
+                    
+                } else if (card1029 > 0 && card1030 > 0) {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/noCards.png';
+                    
+                }  else {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/10291030.png';
+                    
+                }
+                }
+                
+            }
+            
+            function pickUp1029() {
+                
+                if(carried > 0) {
+                    
+                   document.getElementById('outputText').innerHTML += "<span class = 'player'><br><br>[" + name + "]: I can only try one keycard at a time!.</span>"; 
+                    
+                } else {
+                
+                if (card1029 < 1) {
+                    
+                    document.getElementById('outputText').innerHTML += "<span class = 'player'><br><br>[" + name + "]: I have picked-up keycard 1029.</span>";
+                    keycard.play();
+                    card1029++;
+                    countIncorrect++;
+                    carried++;
+                    
+                } else {
+                    
+                    document.getElementById("outputText").innerHTML += "<span class = 'system'><br><br>[System]: You have already searched there.</span>";
+                    
+                    
+                }
+                
+                
+               
+                if (card1023 == 0 && card1030 > 0) {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/1023.png';
+                    
+                    
+                } else if (card1023 > 0 && card1030 ==0) {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/1030.png';
+                    
+                    
+                    
+                } else if (card1023 > 0 && card1030 > 0) {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/noCards.png';
+                    
+                }  else {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/10231030.png';
+                    
+                }
+                }
+            }
+            
+            function pickUp1030() {
+                
+                if(carried > 0) {
+                    
+                   document.getElementById('outputText').innerHTML += "<span class = 'player'><br><br>[" + name + "]: I can only try one keycard at a time!.</span>"; 
+                    
+                } else {
+                
+                if (card1030 < 1) {
+                    
+                    document.getElementById('outputText').innerHTML += "<span class = 'player'><br><br>[" + name + "]: I have picked-up keycard 1030.</span>";
+                    keycard.play();
+                    card1030++;
+                    countDoor++;
+                    carried++;
+                    
+                } else {
+                    
+                    document.getElementById("outputText").innerHTML += "<span class = 'system'><br><br>[System]: You have already searched there.</span>";
+                    
+                }
+                
+                
+               
+                if (card1023 == 0 && card1029 > 0) {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/1023.png';
+                    
+                    
+                } else if (card1023 > 0 && card1029 ==0) {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/1029.png';
+                    
+                    
+                    
+                } else if (card1023 > 0 && card1030 > 0) {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/noCards.png';
+                    
+                }  else {
+                    
+                    var image = document.getElementById('hall');
+                    
+                    image.src = 'images/10231029.png';
+                    
+                }
+                }
+            }
+            
+            
+
+            function doorOutput() {
+
+                if(countDoor >= 1) {
+                    
+                    sendResidential();
+                    
+                    
+                    
+                    
+                    
+                } else if(countIncorrect >= 1) {
+                    
+                    
+                    document.getElementById("outputText").innerHTML += "<span class = 'player'><br><br>[" + name + "]: That doesn't seem right...</span>"; 
+                    lockedDoor.play();
+                    carried = 0;
+                    countIncorrect = 0;
+                    
+                }
+                
+                
+                
+                else {
+                    
+                    document.getElementById("outputText").innerHTML += "<span class = 'system'><br><br>[System]: This door is opened via a keycard - a code, 1030, is stamped on the lock.</span>";
+                    
+                    
+                }
+
+            }
+            
+            function changeColour() {
+                    
+            
+            countContrast++;  
+                
+            
+             if(countContrast % 2 === 0) {
+                    
+            document.getElementById("head").style.color = "aqua";
+            document.getElementById("accessibility").style.color = "aqua";
+            document.getElementById("output").style.color = "aqua";
+            document.getElementById("audio").style.color = "aqua";
+            document.getElementById("timer").style.color = "aqua";
+            document.getElementById("buttonContrast").style.color = "aqua";
+            document.getElementById("buttonFont").style.color = "aqua";
+        
+                
+                
+                
+                    
+                    
+            } else if (countContrast % 2 === 1) {
+                           
+            document.getElementById("head").style.color = "yellow";
+            document.getElementById("accessibility").style.color = "yellow";
+            document.getElementById("output").style.color = "yellow";
+            document.getElementById("audio").style.color = "yellow";
+            document.getElementById("timer").style.color = "yellow";
+            document.getElementById("buttonContrast").style.color = "yellow";
+            document.getElementById("buttonFont").style.color = "yellow";
+                
+                
+               
+             
+                           
+                }
+            
+            
+                  
+            }
+
+            function changeFontSize() {
+                    
+            
+            countFontSize++;  
+                
+            
+             if(countFontSize % 2 === 0) {
+                    
+            document.getElementById("head").style.fontSize = "initial";
+            document.getElementById("accessibility").style.fontSize = "initial";
+            document.getElementById("output").style.fontSize = "initial";
+            document.getElementById("audio").style.fontSize = "initial";
+            document.getElementById("timer").style.fontSize = "initial";
+            document.getElementsByTagName("button").style.fontSize = "initial";
+                
+                
+                
+                    
+                    
+            } else if (countFontSize % 2 === 1) {
+                           
+            document.getElementById("head").style.fontSize = "x-large";
+            document.getElementById("accessibility").style.fontSize = "x-large";
+            document.getElementById("output").style.fontSize = "x-large";
+            document.getElementById("audio").style.fontSize = "x-large";
+            document.getElementById("timer").style.fontSize = "x-large";
+                
+                
+               
+             
+                           
+                }
+            
+            
+                  
+            }
+
+            function setContrast() {
+
+                
+            if(countContrast % 2 === 1) {
+                    
+            document.getElementById("head").style.color = "yellow";
+            document.getElementById("accessibility").style.color = "yellow";
+            document.getElementById("output").style.color = "yellow";
+            document.getElementById("audio").style.color = "yellow";
+            document.getElementById("timer").style.color = "yellow";
+            document.getElementById("buttonContrast").style.color = "yellow";
+            document.getElementById("buttonFont").style.color = "yellow";
+                
+      
+            }
+            
+            }
+            
+            function setSize() {
+
+            if (countFontSize % 2 === 1) {
+                           
+            document.getElementById("head").style.fontSize = "x-large";
+            document.getElementById("accessibility").style.fontSize = "x-large";
+            document.getElementById("output").style.fontSize = "x-large";
+            document.getElementById("audio").style.fontSize = "x-large";
+            document.getElementById("timer").style.fontSize = "x-large";
+     
+            }
+                
+            }
+
+            function sendResidential() {
+                
+                var transferContrast = countContrast;
+                
+                sessionStorage.setItem('transferContrast', transferContrast);
+                
+                var transferSize = countFontSize;
+                
+                sessionStorage.setItem('transferSize', transferSize);
+                
+                
+                var transferTime = timer;
+                
+                sessionStorage.setItem('timeLeft', transferTime);
+                
+                
+                var timeTakenResidential = timeTaken;
+                
+                sessionStorage.setItem('timeTakenResidential', timeTakenResidential);
+                
+                window.open('deck.html', '_self'); 
+
+            }
+            
+            function tvOutput() {
+                
+                document.getElementById("outputText").innerHTML += "<span class = 'player'><br><br>[" + name + "]: Looks like we are somewhere in the Baltic.</span>"; 
+                
+            }
+            
+        </script>
+    
+    </head>
+
+        <body onload="initialStairs()">
+        
+            <div id="head">
+            <h1>Level 5 - Residential Area</h1>
+        </div>
+        
+                <div id="wrapper">
+
+                    <div class="row">
+
+                        <div id="game">
+                    
+                        <img id ="hall" src="images/allCards.png" alt="lobby of a residential area of the ship - keycards control access in and out of the area"  usemap="#door">
+
+                            <map name="door">    
+                    
+                                <area shape="rect" coords="015,325,075,365" onclick="pickUp1023()">
+                                
+                                <area shape="rect" coords="105,375,155,415" onclick="pickUp1030()">
+                                
+                                <area shape="rect" coords="380,525,450,570" onclick="pickUp1029()">
+                                
+                                <area shape="rect" coords="200,160,305,470" onclick="doorOutput()">
+                                
+                                <area shape="rect" coords="090,120,175,200" onclick="tvOutput()">
+                                
+                                
+                                
+                            </map> 
+                    
+                    
+
+                    </div>
+
+                        <div id = "timer">
+                    
+                        <h2>Time Remaining: <span id = "timeLeft"><i>Calculating...</i></span></h2>
+                        
+                         
+                    </div>
+
+                        <div id = "audio">
+                    
+                        <h2>Sound Effects:</h2>
+                    
+                            <figcaption>General Alarm</figcaption>
+                        
+                        <audio controls loop>   
+                        
+                            <source src="sound/alarm.mp3">
+                        
+                            Your browser does not support the audio element.
+                        
+                        </audio> 
+                            
+                            <figcaption>Distant Waves</figcaption>
+                        
+                        <audio controls loop>   
+                        
+                            <source src="sound/DistantWaves.mp3">
+                        
+                            Your browser does not support the audio element.
+                        
+                        </audio>    
+                    
+
+                    
+
+
+                    </div>
+                
+                    </div>
+
+                    <div class="row">
+ 
+                        <div id = "output">
+                       
+                        <p id="outputText"></p>
+                    
+                    </div>
+
+                        <div id = "accessibility" >
+                    
+                    <h2>Accessibility Options:</h2>
+                    
+                        <button id="buttonContrast" onclick="changeColour()">Toggle High Contrast</button>
+                    
+                        <button id="buttonFont" onclick="changeFontSize()">Toggle Font Size</button>
+
+                    </div>
+
+                    </div>
+
+                </div>
+        
+        </body>
+    
+</html>

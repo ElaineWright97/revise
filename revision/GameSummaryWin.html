@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        
+        <title>Escape the Ship</title>
+        
+        <link href="css/layoutMenu.css" rel="stylesheet" type="text/css" />
+       
+        
+        <script type= "text/javascript">
+        
+            var name = sessionStorage.getItem('transferName');
+            
+            var countContrast = sessionStorage.getItem('transferContrast');
+            var countFontSize = sessionStorage.getItem('transferSize');
+            var transferAttempt = sessionStorage.getItem('transferAttempt');
+            
+            var job = sessionStorage.getItem('transferJob');
+            var ship = sessionStorage.getItem('transferShip');
+            
+            var timeEngine = sessionStorage.getItem('timeTakenEngine');
+            var timeStairs = sessionStorage.getItem('timeTakenStairs');
+            var timeMaintenance = sessionStorage.getItem('timeTakenMaintenance');
+            var timeCargo = sessionStorage.getItem('timeTakenCargo');
+            var timeResidential = sessionStorage.getItem('timeTakenResidential');
+            var timeDeck = sessionStorage.getItem('timeTakenDeck');
+            var timeLifeboat = sessionStorage.getItem('timeTakenLifeboat');
+            
+            
+            
+            
+        
+            
+            function initial() {
+
+                setSize();
+                setContrast();
+                displayTimes();
+                displayDetails();
+                
+
+            }
+            
+
+            function displayTimes() {
+                
+                if(timeEngine == null) {  
+                } else if(timeEngine == 1){
+                    
+                  document.getElementById('times').innerHTML += "You spent " + timeEngine + " second on Level 1 ";
+                    
+                } else {
+                    
+                    document.getElementById('times').innerHTML += "You spent " + timeEngine + " seconds on Level 1 ";
+                    
+                }
+                
+                if(timeStairs == null) {  
+                } else if(timeStairs == 1){
+                    
+                  document.getElementById('times').innerHTML += "<br>You spent " + timeStairs + " second on Level 2 ";
+                    
+                } else {
+                    
+                    document.getElementById('times').innerHTML += "<br>You spent " + timeStairs + " seconds on Level 2 ";
+                    
+                }
+                
+                if(timeMaintenance == null) {    
+                } else if(timeMaintenance == 1){
+                    
+                  document.getElementById('times').innerHTML += "<br>You spent " + timeMaintenance + " second on Level 3";
+                    
+                } else {
+                    
+                    document.getElementById('times').innerHTML += "<br>You spent " + timeMaintenance + " seconds on Level 3";
+                    
+                }
+                
+                if(timeCargo == null) {    
+                } else if(timeCargo == 1){
+                    
+                  document.getElementById('times').innerHTML += "<br>You spent " + timeCargo + " second on Level 4";
+                    
+                } else {
+                    
+                    document.getElementById('times').innerHTML += "<br>You spent " + timeCargo + " seconds on Level 4";
+                    
+                }
+                
+                if(timeResidential == null) {  
+                } else if(timeResidential == 1){
+                    
+                  document.getElementById('times').innerHTML += "<br>You spent " + timeResidential + " second on Level 5 ";
+                    
+                } else {
+                    
+                    document.getElementById('times').innerHTML += "<br>You spent " + timeResidential + " seconds on Level 5 ";
+                    
+                }
+                
+                if(timeDeck == null) {  
+                } else if(timeDeck == 1){
+                    
+                  document.getElementById('times').innerHTML += "<br>You spent " + timeDeck + " second on Level 6";
+                    
+                } else {
+                    
+                    document.getElementById('times').innerHTML += "<br>You spent " + timeDeck + " seconds on Level 6";
+                    
+                }
+                
+                if(timeLifeboat == null) {  
+                } else if(timeLifeboat == 1){
+                    
+                  document.getElementById('times').innerHTML += "<br>You spent " + timeLifeboat + " second on Level 7";
+                    
+                } else {
+                    
+                    document.getElementById('times').innerHTML += "<br>You spent " + timeLifeboat + " seconds on Level 7";
+                    
+                }
+                
+
+                document.getElementById('times').innerHTML += "<br><br>On Attempt " + transferAttempt;
+                
+                
+            }
+
+
+
+            
+            function displayDetails() {
+                
+                document.getElementById('wel').innerHTML += name;
+                
+                document.getElementById('details').innerHTML += job + " " + name + " escaped " + ship;
+                
+            }
+            
+            
+            function changeColour() {
+                    
+            
+            countContrast++;  
+                
+            
+             if(countContrast % 2 === 0) {
+                    
+            document.getElementById("head").style.color = "aqua";
+            document.getElementById("accessibility").style.color = "aqua";
+            document.getElementById("output").style.color = "aqua";
+            document.getElementById("audio").style.color = "aqua";
+            document.getElementById("timer").style.color = "aqua";
+            document.getElementById("game").style.color = "aqua";
+            document.getElementById("buttonRetry").style.color = "aqua";
+            document.getElementById("buttonContrast").style.color = "aqua";
+            document.getElementById("buttonFont").style.color = "aqua";
+            
+                
+                
+                
+                    
+                    
+            } else if (countContrast % 2 === 1) {
+                           
+            document.getElementById("head").style.color = "yellow";
+            document.getElementById("accessibility").style.color = "yellow";
+            document.getElementById("output").style.color = "yellow";
+            document.getElementById("audio").style.color = "yellow";
+            document.getElementById("timer").style.color = "yellow";
+            document.getElementById("game").style.color = "yellow";
+            document.getElementById("buttonRetry").style.color = "yellow";
+            document.getElementById("buttonContrast").style.color = "yellow";
+            document.getElementById("buttonFont").style.color = "yellow";
+                
+                
+               
+             
+                           
+                }
+            
+            
+                  
+            }
+            
+            function changeFontSize() {
+                    
+            
+            countFontSize++;  
+                
+            
+             if(countFontSize % 2 === 0) {
+                    
+            document.getElementById("head").style.fontSize = "initial";
+            document.getElementById("accessibility").style.fontSize = "initial";
+            document.getElementById("output").style.fontSize = "initial";
+            document.getElementById("audio").style.fontSize = "initial";
+            document.getElementById("timer").style.fontSize = "initial";
+            document.getElementById("game").style.fontSize = "initial";
+            
+                
+                
+                
+                    
+                    
+            } else if (countFontSize % 2 === 1) {
+                           
+            document.getElementById("head").style.fontSize = "x-large";
+            document.getElementById("accessibility").style.fontSize = "x-large";
+            document.getElementById("output").style.fontSize = "x-large";
+            document.getElementById("audio").style.fontSize = "x-large";
+            document.getElementById("timer").style.fontSize = "x-large";
+            document.getElementById("game").style.fontSize = "large";
+                
+                
+               
+             
+                           
+                }
+            
+            
+                  
+            }
+            
+            function playAgain() {
+                
+                sessionStorage.removeItem('timeTakenEngine');
+                
+                sessionStorage.removeItem('timeTakenStairs');
+                
+                sessionStorage.removeItem('timeTakenMaintenance');
+                
+                sessionStorage.removeItem('timeTakenCargo');
+                
+                sessionStorage.removeItem('timeTakenResidential');
+                
+                sessionStorage.removeItem('timeTakenDeck');
+                
+                sessionStorage.removeItem('timeTakenLifeboat');
+                
+                
+                window.open('GameLanding.html', '_self');
+                
+                
+                
+                
+                
+                
+                
+            }
+            
+            function setSize() {
+
+            if (countFontSize % 2 === 1) {
+                           
+            document.getElementById("head").style.fontSize = "x-large";
+            document.getElementById("accessibility").style.fontSize = "x-large";
+            document.getElementById("output").style.fontSize = "x-large";
+            document.getElementById("audio").style.fontSize = "x-large";
+            document.getElementById("timer").style.fontSize = "x-large";
+     
+            }
+                
+            }
+            
+            function setContrast() {
+
+                
+            if(countContrast % 2 === 1) {
+                    
+            document.getElementById("head").style.color = "yellow";
+            document.getElementById("accessibility").style.color = "yellow";
+            document.getElementById("output").style.color = "yellow";
+            document.getElementById("audio").style.color = "yellow";
+            document.getElementById("timer").style.color = "yellow";
+            document.getElementById("game").style.color = "yellow";
+            document.getElementById("buttonRetry").style.color = "yellow";
+            document.getElementById("buttonContrast").style.color = "yellow";
+            document.getElementById("buttonFont").style.color = "yellow";
+            
+                
+      
+            }
+            
+            }
+            
+        
+        </script>
+        
+    </head>
+
+    <body onload="initial()">
+        <script type = "text/javascript" src ="js/script.js"></script>
+        <div id="head">
+            <h1>Escape the Ship</h1>
+        </div>
+        
+            <div id="wrapper">
+
+            <div class=row>
+
+                <div id="game">
+                    <div id = "lost">
+                 <h1 id = "WinLose"> You've won <span id = "wel"></span>!</h1>
+                    <h1><span id = "details"></span></h1>
+                        
+                    <h2><span id="times"></span></h2>
+                        
+                        
+                        
+                    
+                      
+                        
+
+                        
+                        
+                        
+                    </div>
+                </div>
+
+                <div id="timer">
+                    
+                         <img id = "waves" src= "images/RobPumphreyUnplash.jpg" alt = "RNLI Lifeboats sppeding to the rescue" title = "Waves crashing"/>
+                                                         
+                </div>
+
+                <div id="audio">
+                  <h2>Sound Effects:</h2>
+                    
+                    <figcaption>Theme Music</figcaption>
+                    
+                     <audio controls loop>
+                         
+                         <source src="sound/Purple%20Planet%20Music%20-%20The%20Getaway%20(1_31)%20150bpm.mp3" >
+                         
+                         Your browser does not support the audio element.
+                         
+                     </audio>
+
+                </div>
+            </div>
+                
+                
+
+            <div class="row">
+                
+                <div id = "output">
+                    
+                  <button id = "buttonRetry" onclick="playAgain()" style="width: 150px; height: 50px;">Play again?</button>
+                    
+                    </div>
+
+                <div id="accessibility">
+                   <h2>Accessibility Options:</h2>
+                    
+                                        
+                        <button id = "buttonContrast" onclick="changeColour()">Toggle High Contrast</button>
+                    
+                        <button id = "buttonFont" onclick="changeFontSize()">Toggle Font Size</button>
+                </div>
+
+            
+
+        </div>
+                </div>
+    </body>
+    
+</html>
