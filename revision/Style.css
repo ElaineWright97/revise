@@ -1,169 +1,212 @@
-body {
-     background-image: linear-gradient(to top, #e6417e,#f7ca96, #fdf3b1);
-    background-color: #e6417e;
-    color: #83113b;
-
-    
-}
-
-
-
-button {
-float:left;
-padding: 0;
-border: none;
-background: none;
-    cursor: pointer;
-}
-
-
-.row{
-    overflow: hidden;
-    clear: both;
-    
-    
-}
-#wrapper {
-    width: 80%;
-    margin:auto;
-    /*transition: margin-left .5s;*/
-}
-
-.inner {
-    width: 80%;
-    margin:auto;
-       font-size: 25em;
-    /*transition: margin-left .5s;*/
-}
-
-h2{
-     color: #e3276c;
-}
-    #head {
-    padding: 5px 0px 5px 0px;
-    width: 100%;
-    height: 80px;
-    font-family: sans-serif;
-    background-size: auto;   
-    text-align: center;
-    background-color: #fef4f7;
-    color: #e3276c;
-}
-
-#main{
-    float: left;
-    width: 70%;
-    height: 500px;
-    font-family: sans-serif;
-    background-color: #fef4f7;
-    color: #b71852;
-    text-align: center;
-}
-
-#out1{
-    
-    float: right;
-    width: 30%;
-    height: 500px;
-    font-family: sans-serif;
-    background-color: #fef4f7;
-    color: #b71852;
-    text-align: center;
-    
-}
-
-
-#out2{
+ * {
+     box-sizing: border-box;
+     margin: 0;
+ }
  
-    float: left;
-    width: 50%;
-    height: 200px;
-    font-family: sans-serif;
-    background-color: #fef4f7;
-    color: #b71852;
-    text-align: center;
-
-}
-
-    
-
-#out3{
-    float: right;
-    width: 50%;
-    height: 200px;
-    font-family: sans-serif;
-    background-color: #fef4f7;
-    color: #b71852;
-    text-align: center;
-}
-
-
-.col {
-  float: left;
-  width: 50%;
-}
-
-
-
-/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-    background-image: linear-gradient(to top, #fdf3b1,#f7ca96, #e6417e);
- /* background-color: #fbf1b3; /*#f08db2;  Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 2s; /* 0.5 second transition effect to slide in the sidenav */
-    opacity: 95%;
-border-radius: 3%
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #fef4f7;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color:#fef4f7;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-#header {
-  overflow:hidden; /* contain floats */
-  height:400px;
-  color: #e3276c;
- font-family: serif;
-
-    
-}
-
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation 
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}*/
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+ body {
+     text-align: center;
+     font-family: 'Lato';
+ }
+ 
+ #searchbar,
+ #navBar {
+     clear: both;
+ }
+ 
+ .greenbar {
+     width: 100%;
+     height: 1vh;
+     color: white;
+     background-color: rgb(1, 88, 1);
+ }
+ 
+ #logo {
+     float: left;
+     width: 20%;
+ }
+ 
+ .topBanner {
+     width: 70%;
+     margin: auto;
+     height: 10vh;
+     color: white;
+     padding: 4vh;
+     background-image: url('images/logo.png');
+     background-size: contain;
+     background-position: left;
+     background-repeat: no-repeat;
+ }
+ 
+ #nav ul {
+     list-style-type: none;
+ }
+ 
+ #nav a {
+     text-transform: uppercase;
+     text-decoration: none;
+     color: black;
+     font-family: sans-serif;
+     font-size: 0.8em;
+ }
+ 
+ #nav a {
+     text-transform: uppercase;
+     text-decoration: none;
+     color: black;
+     font-family: sans-serif;
+     font-size: 0.8em;
+ }
+ 
+ #searchbar a {
+     text-decoration: none;
+     color: black;
+     font-family: sans-serif;
+     font-size: 0.8em;
+ }
+ 
+ #nav {
+     float: left;
+     text-align: left;
+     width: 80%;
+ }
+ 
+ #empty {
+     float: left;
+     width: 60%;
+ }
+ 
+ #space {
+     float: left;
+     width: 58%;
+ }
+ 
+ #search {
+     float: left;
+     width: 10%;
+ }
+ 
+ #signin {
+     float: left;
+     width: 7%;
+ }
+ 
+ #locations {
+     float: left;
+     width: 10%;
+ }
+ 
+ #bag {
+     float: left;
+     width: 10%;
+ }
+ 
+ #divide {
+     float: left;
+     width: 3%;
+     color: black;
+ }
+ 
+ #locate,
+ #basket {
+     float: left;
+     display: inline;
+     height: 1em;
+ }
+ 
+ #promo {
+     width: 40%;
+     float: right;
+ }
+ 
+ #promo p {
+     font-size: 1em;
+     font-family: 'Petrona', serif;
+     text-align: left;
+     font-style: italic;
+ }
+ 
+ #promo h1 {
+     font-size: 1.5em;
+     font-family: 'Petrona', serif;
+     text-align: left;
+     font-style: italic;
+ }
+ 
+ li {
+     float: left;
+ }
+ 
+ a {
+     display: block;
+     padding: 8px;
+ }
+ 
+ .headerImage {
+     overflow: hidden;
+     clear: both;
+     width: 100%;
+     height: 60vh;
+     color: white;
+     padding: 24vh;
+     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), black 60%), url('images/coffee.jpg');
+     background-size: cover;
+     background-position: center;
+ }
+ 
+ .banner {
+     overflow: hidden;
+     clear: both;
+     width: 80%;
+     height: 30vh;
+     color: white;
+     padding: 12vh;
+     margin: auto;
+     background-color: #0f0f0f;
+     background-image: url('images/rewards.png');
+     background-size: contain;
+     background-position: left;
+     background-repeat: no-repeat;
+     font-family: sans-serif;
+ }
+ 
+ .rewards {
+     width: 100%;
+     background-image: linear-gradient(to right, #272727, #0f0f0f);
+ }
+ 
+ .earn {
+     width: 100%;
+     background-color: rgb(54, 54, 54);
+     color: white;
+     height: 30vh;
+     font-family: sans-serif;
+     font-weight: bold;
+     text-transform: uppercase;
+     font-size: 0.75em;
+ }
+ 
+ .c {
+     background: url('images/cathedral.jpg') center/cover;
+ }
+ 
+ .d {
+     background: url('images/graffiti.jpg') center/cover;
+ }
+ 
+ #join {
+     background-color: rgb(230, 197, 135);
+     border-radius: 10%;
+     font-size: 0.75em;
+     font-family: sans-serif;
+     font-weight: bold;
+ }
+ 
+ #sign {
+     background-color: black;
+     border-radius: 10%;
+     border-color: white;
+     color: white;
+     font-size: 0.75em;
+     font-family: sans-serif;
+     font-weight: bold;
+ }
